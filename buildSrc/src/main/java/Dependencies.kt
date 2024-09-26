@@ -15,4 +15,8 @@ object Dependencies {
     val debugTooling by lazy { "androidx.compose.ui:ui-tooling" }
     val testJUnit by lazy { "androidx.compose.ui:ui-test-junit4" }
     val testBom by lazy { "androidx.compose:compose-bom:2023.08.00" }
+    val appCompat by lazy { "androidx.appcompat:appcompat:${Versions.appCompat}" }
+    val material by lazy { "com.google.android.material:material:${Versions.material}" }
+
+
 }
