@@ -66,4 +66,6 @@ dependencies {
     androidTestImplementation(Dependencies.testJUnit)
     debugImplementation(Dependencies.debugTooling)
     debugImplementation(Dependencies.testManifest)
+
+    implementation(project(Modules.utilities))
 }
