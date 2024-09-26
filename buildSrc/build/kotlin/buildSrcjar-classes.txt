@@ -1,0 +1,1 @@
+F:\Android Progects2\NewsInShort\buildSrc\build\classes\kotlin\main\Dependencies$coreKtx$2.class;F:\Android Progects2\NewsInShort\buildSrc\build\classes\kotlin\main\Dependencies.class;F:\Android Progects2\NewsInShort\buildSrc\build\classes\kotlin\main\Versions.class

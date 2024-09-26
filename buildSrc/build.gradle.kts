@@ -1,7 +1,10 @@
-plugins{
-    "kotlin - dsl"
+import org.gradle.kotlin.dsl.`kotlin-dsl`
+
+
+plugins {
+    `kotlin-dsl`
 }
 
-repositories{
+repositories {
     mavenCentral()
 }
