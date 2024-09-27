@@ -19,6 +19,9 @@ object Dependencies {
     val material by lazy { "com.google.android.material:material:${Versions.material}" }
 
 
+    val hiltAndroid by lazy {"com.google.dagger:hilt-android:${Versions.hiltAndroid}"}
+
+
 }
 
 object Modules{

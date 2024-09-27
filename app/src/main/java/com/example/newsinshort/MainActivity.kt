@@ -23,3 +23,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+ @Composable
+ fun NewsInShortEntryPoint(){
+
+ }
+

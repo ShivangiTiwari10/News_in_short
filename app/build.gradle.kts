@@ -68,4 +68,6 @@ dependencies {
     debugImplementation(Dependencies.testManifest)
 
     implementation(project(Modules.utilities))
+    implementation(Dependencies.hiltAndroid)
+
 }
