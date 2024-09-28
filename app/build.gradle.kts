@@ -80,6 +80,9 @@ dependencies {
     implementation(Dependencies.okhttp)
     implementation(Dependencies.gsonConvertor)
 
+    implementation(Dependencies.moshi)
+    implementation(Dependencies.moshiConverter)
+
 }
 kapt {
     correctErrorTypes = true

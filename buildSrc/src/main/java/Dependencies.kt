@@ -27,7 +27,10 @@ object Dependencies {
     val retrofit by lazy { "com.squareup.retrofit2:retrofit:${Versions.retrofit}" }
     val okhttp by lazy { "com.squareup.okhttp3:okhttp:${Versions.okhttp}" }
 
-    val gsonConvertor by lazy{ "com.squareup.retrofit2:converter-gson:${Versions.gsonConvertor}"}
+    val gsonConvertor by lazy { "com.squareup.retrofit2:converter-gson:${Versions.gsonConvertor}" }
+    val moshi by lazy { "com.squareup.moshi:moshi-kotlin:${Versions.moshi}" }
+    val moshiConverter by lazy { "com.squareup.retrofit2:converter-moshi:${Versions.moshiConverter}" }
+
 }
 
 object Modules {
