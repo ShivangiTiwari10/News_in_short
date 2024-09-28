@@ -17,5 +17,6 @@ object Versions {
     const val gsonConvertor ="2.11.0"
     const val moshi ="1.14.0"
     const val moshiConverter ="2.11.0"
+    const val loggingInterceptor ="4.12.0"
 
 }

@@ -82,6 +82,7 @@ dependencies {
 
     implementation(Dependencies.moshi)
     implementation(Dependencies.moshiConverter)
+    implementation(Dependencies.loggingInterceptor)
 
 }
 kapt {
