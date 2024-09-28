@@ -25,6 +25,7 @@ object Dependencies {
     val hiltNavigationCompose by lazy { "androidx.hilt:hilt-navigation-compose:${Versions.hiltnav}" }
 
     val retrofit by lazy { "com.squareup.retrofit2:retrofit:${Versions.retrofit}" }
+    val okhttp by lazy { "com.squareup.okhttp3:okhttp:${Versions.okhttp}" }
 }
 
 object Modules {
