@@ -14,5 +14,6 @@ object Versions {
     const val hiltnav ="1.2.0"
     const val retrofit ="2.9.0"
     const val okhttp ="4.12.0"
+    const val gsonConvertor ="2.11.0"
 
 }

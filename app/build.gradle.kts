@@ -77,7 +77,8 @@ dependencies {
 
     implementation(Dependencies.hiltNavigationCompose)
     implementation(Dependencies.retrofit)
-    implementation(Dependencies.okhttp )
+    implementation(Dependencies.okhttp)
+    implementation(Dependencies.gsonConvertor)
 
 }
 kapt {
