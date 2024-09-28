@@ -10,8 +10,8 @@ object Dependencies {
     val composeMaterial by lazy { "androidx.compose.material3:material3" }
     val jUnit by lazy { "junit:junit:${Versions.jUnit}" }
     val testjUnit by lazy { "androidx.test.ext:junit:${Versions.testJunit}" }
-    val testExpresso by lazy { "androidx.test.espresso:espresso-core:${Versions.testExpresso}"}
-    val testManifest by lazy{"androidx.compose.ui:ui-test-manifest"}
+    val testExpresso by lazy { "androidx.test.espresso:espresso-core:${Versions.testExpresso}" }
+    val testManifest by lazy { "androidx.compose.ui:ui-test-manifest" }
     val debugTooling by lazy { "androidx.compose.ui:ui-tooling" }
     val testJUnit by lazy { "androidx.compose.ui:ui-test-junit4" }
     val testBom by lazy { "androidx.compose:compose-bom:${Versions.testBom}" }
@@ -19,12 +19,14 @@ object Dependencies {
     val material by lazy { "com.google.android.material:material:${Versions.material}" }
 
 
-    val hiltAndroid by lazy {"com.google.dagger:hilt-android:${Versions.hilt}"}
-    val hiltCompiler by lazy {"com.google.dagger:hilt-compiler:${Versions.hilt}"}
+    val hiltAndroid by lazy { "com.google.dagger:hilt-android:${Versions.hilt}" }
+    val hiltCompiler by lazy { "com.google.dagger:hilt-compiler:${Versions.hilt}" }
+
+    val hiltNavigationCompose by lazy { "androidx.hilt:hilt-navigation-compose:${Versions.hiltnav}" }
 
 
 }
 
-object Modules{
+object Modules {
     const val utilities = ":utilities"
 }
