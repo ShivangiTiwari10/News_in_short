@@ -9,7 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.example.newsinshort.ui.components.AppNavigationGraph
+import com.example.newsinshort.ui.navigation.AppNavigationGraph
 import com.example.newsinshort.ui.theme.NewsInShortTheme
 import dagger.hilt.android.AndroidEntryPoint
 
