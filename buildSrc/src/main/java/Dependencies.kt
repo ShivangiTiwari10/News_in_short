@@ -24,7 +24,7 @@ object Dependencies {
 
     val hiltNavigationCompose by lazy { "androidx.hilt:hilt-navigation-compose:${Versions.hiltnav}" }
 
-
+    val retrofit by lazy { "com.squareup.retrofit2:retrofit:${Versions.retrofit}" }
 }
 
 object Modules {

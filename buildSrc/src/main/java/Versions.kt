@@ -12,5 +12,6 @@ object Versions {
     const val jUnit ="4.13.2"
     const val hilt ="2.51.1"
     const val hiltnav ="1.2.0"
+    const val retrofit ="2.9.0"
 
 }

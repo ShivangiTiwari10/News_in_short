@@ -76,6 +76,7 @@ dependencies {
     kapt(Dependencies.hiltCompiler)
 
     implementation(Dependencies.hiltNavigationCompose)
+    implementation(Dependencies.retrofit)
 
 }
 kapt {
