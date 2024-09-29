@@ -2,6 +2,8 @@ package com.example.newsinshort.ui.data.di
 
 import com.example.newsinshort.ui.data.AppConstants
 import com.example.newsinshort.ui.data.api.ApiService
+import com.example.newsinshort.ui.data.datasource.NewsDataSource
+import com.example.newsinshort.ui.data.datasource.NewsDataSourceImpl
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -16,6 +18,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 
+// MODULE for Dagger Hilt where  all the dependencies related code is present
 @Module
 @InstallIn(SingletonComponent::class)
 class AppModule {
@@ -53,4 +56,14 @@ class AppModule {
     fun providesApiServices(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
+
+
+    @Provides
+    @Singleton
+    fun providesNewsDataSource(apiService: ApiService): NewsDataSource {
+        return NewsDataSourceImpl(apiService)
+
+    }
+
+
 }
