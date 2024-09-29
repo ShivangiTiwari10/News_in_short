@@ -1,6 +1,7 @@
 package com.example.newsinshort.ui.data.di
 
 import com.example.newsinshort.ui.data.AppConstants
+import com.example.newsinshort.ui.data.api.ApiService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -45,5 +46,11 @@ class AppModule {
             .client(httpClient.build())
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun providesApiServices(retrofit: Retrofit): ApiService {
+        return retrofit.create(ApiService::class.java)
     }
 }
