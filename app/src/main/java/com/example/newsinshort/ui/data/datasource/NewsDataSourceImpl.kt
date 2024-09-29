@@ -6,7 +6,7 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class NewsDataSourceImpl @Inject constructor(private val apiService: ApiService) : NewsDataSource {
-    override fun getNewsHeadline(country: String): Response<NewsResponse> {
+    override suspend fun getNewsHeadline(country: String): Response<NewsResponse> {
 
         return apiService.getNewsHeadline(country)
     }
