@@ -4,6 +4,7 @@ import com.example.newsinshort.ui.data.AppConstants
 import com.example.newsinshort.ui.data.api.ApiService
 import com.example.newsinshort.ui.data.datasource.NewsDataSource
 import com.example.newsinshort.ui.data.datasource.NewsDataSourceImpl
+import com.example.newsinshort.ui.repository.NewsRepository
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -63,6 +64,13 @@ class AppModule {
     fun providesNewsDataSource(apiService: ApiService): NewsDataSource {
         return NewsDataSourceImpl(apiService)
 
+    }
+
+
+    @Provides
+    @Singleton
+    fun providesNewsRepository(newsDataSource: NewsDataSource): NewsRepository {
+        return NewsRepository(newsDataSource)
     }
 
 
