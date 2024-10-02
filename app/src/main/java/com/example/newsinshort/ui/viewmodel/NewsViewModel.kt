@@ -3,6 +3,7 @@ package com.example.newsinshort.ui.viewmodel
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.newsinshort.ui.data.AppConstants
 import com.example.newsinshort.ui.data.entity.NewsResponse
 import com.example.newsinshort.ui.repository.NewsRepository
 import com.example.utilities.ResourceState
@@ -25,7 +26,11 @@ class NewsViewModel @Inject constructor(
 
     val news: StateFlow<ResourceState<NewsResponse>> = _news
 
-    suspend fun getNews(country: String) {
+    init {
+        getNews(AppConstants.country)
+    }
+
+    private fun getNews(country: String) {
 
         viewModelScope.launch(Dispatchers.IO) {
             newsRepository.getNewsHeadline(country)
