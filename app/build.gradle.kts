@@ -84,6 +84,7 @@ dependencies {
     implementation(Dependencies.moshiConverter)
     implementation(Dependencies.loggingInterceptor)
     implementation(Dependencies.coroutines)
+    implementation(Dependencies.splashScreen)
 
 }
 kapt {
