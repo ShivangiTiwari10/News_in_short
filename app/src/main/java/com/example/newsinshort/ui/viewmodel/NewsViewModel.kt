@@ -37,7 +37,7 @@ class NewsViewModel @Inject constructor(
 
 
                 .collectLatest { newsResponse ->
-//                    _news.value = newsResponse
+                    _news.value = newsResponse
                 }
         }
     }
