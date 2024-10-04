@@ -19,6 +19,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.newsinshort.ui.data.entity.Article
 import com.example.newsinshort.ui.data.entity.NewsResponse
 import com.example.newsinshort.ui.theme.Purple40
 
@@ -55,9 +56,9 @@ fun Default() {
 @Composable
 fun NewsList(response: NewsResponse) {
 
-    LazyColumn{
-        items(response.articles){
-            article-> NormalTextComponent(textValue = article.author ?:"NA")
+    LazyColumn {
+        items(response.articles) { article ->
+            NormalTextComponent(textValue = article.author ?: "NA")
         }
     }
 }
@@ -74,6 +75,12 @@ fun NormalTextComponent(textValue: String) {
             fontSize = 18.sp
         )
     )
+}
+
+@Composable
+fun NewsRowComponent(page: Int, article: Article) {
+    NormalTextComponent(textValue = "$page \n\n ${article.title}")
+
 }
 
 
