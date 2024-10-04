@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.newsinshort.ui.components.Loader
+import com.example.newsinshort.ui.components.NewsList
 import com.example.newsinshort.ui.viewmodel.NewsViewModel
 import com.example.utilities.ResourceState
 
@@ -37,12 +38,16 @@ fun HomeScreen(
             }
 
             is ResourceState.Success -> {
-                Log.d(TAG, "Inside Success")
 
+                val response = (newsResponse as ResourceState.Success).data
+                Log.d(TAG, "Inside Success ${response.totalResults} = ${response.status}")
+                NewsList(response)
             }
 
             is ResourceState.Error -> {
-                Log.d(TAG, "Inside error")
+                val error = (newsResponse as ResourceState.Error).error
+
+                Log.d(TAG, "Inside error ${error}")
             }
         }
 
