@@ -1,5 +1,6 @@
 package com.example.newsinshort.ui.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -24,6 +25,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -85,7 +87,7 @@ fun NormalTextComponent(textValue: String) {
 
 @Composable
 
-fun headingTextComponent(textValue: String) {
+fun headingTextComponent(textValue: String,centerAlign: Boolean = false) {
 
     Text(
         modifier = Modifier
@@ -97,7 +99,8 @@ fun headingTextComponent(textValue: String) {
             fontSize = 24.sp,
 
             fontWeight = FontWeight.Medium
-        )
+        ),
+        textAlign = if (centerAlign) TextAlign.Center else TextAlign.Start
     )
 }
 
@@ -127,7 +130,10 @@ fun NewsRowComponent(page: Int, article: Article) {
 
 
         headingTextComponent(textValue = article.title ?: "")
+
+        NormalTextComponent(textValue = article.description ?: "")
         Spacer(modifier = Modifier.weight(1f))
+
         AuthorDetailComponent(article.author, article.source?.name)
 
     }
@@ -175,4 +181,33 @@ fun AuthorDetailComponent(authorName: String?, sourceName: String?) {
 
     }
 
+}
+
+
+@Composable
+fun EmptyStateComponent() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+
+
+        Image(
+            painter = painterResource(id = R.drawable.baseline_newspaper_24),
+            contentDescription = null
+        )
+        headingTextComponent(
+            textValue = "No News as of now\n Please check in some time!",
+            centerAlign = true
+        )
+    }
+}
+
+@Preview
+@Composable
+fun EmptyStateComponentprev() {
+    EmptyStateComponent()
 }

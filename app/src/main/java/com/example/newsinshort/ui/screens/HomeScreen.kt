@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.newsinshort.ui.components.EmptyStateComponent
 import com.example.newsinshort.ui.components.Loader
 import com.example.newsinshort.ui.components.NewsRowComponent
 import com.example.newsinshort.ui.viewmodel.NewsViewModel
@@ -46,7 +47,7 @@ fun HomeScreen(
             modifier = Modifier.fillMaxSize(),
             pageSize = PageSize.Fill,
             pageSpacing = 8.dp
-        ) { page:Int ->
+        ) { page: Int ->
             when (newsResponse) {
                 is ResourceState.Loading -> {
                     Log.d(TAG, "Inside Loading")
@@ -57,9 +58,11 @@ fun HomeScreen(
 
                     val response = (newsResponse as ResourceState.Success).data
                     Log.d(TAG, "Inside Success ${response.totalResults} = ${response.status}")
-                    if (response.articles.isNotEmpty()){
+                    if (response.articles.isNotEmpty()) {
                         NewsRowComponent(page, response.articles[page])
 
+                    } else {
+                        EmptyStateComponent()
                     }
                 }
 
