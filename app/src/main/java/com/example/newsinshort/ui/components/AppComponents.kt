@@ -3,6 +3,7 @@ package com.example.newsinshort.ui.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -30,6 +31,7 @@ import coil.compose.AsyncImage
 import com.example.newsinshort.R
 import com.example.newsinshort.ui.data.entity.Article
 import com.example.newsinshort.ui.data.entity.NewsResponse
+import com.example.newsinshort.ui.theme.Pink40
 import com.example.newsinshort.ui.theme.Purple40
 
 @Composable
@@ -125,11 +127,8 @@ fun NewsRowComponent(page: Int, article: Article) {
 
 
         headingTextComponent(textValue = article.title ?: "")
-        Spacer(modifier = Modifier.size(10.dp))
-
-        NormalTextComponent(textValue = article.description ?: "")
-
-        NormalTextComponent(textValue = article.content ?: "")
+        Spacer(modifier = Modifier.weight(1f))
+        AuthorDetailComponent(article.author, article.source?.name)
 
     }
 
@@ -151,4 +150,29 @@ fun NewsRowComponentPrev() {
         source = null
     )
     NewsRowComponent(0, article = article)
+}
+
+@Composable
+fun AuthorDetailComponent(authorName: String?, sourceName: String?) {
+
+
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 8.dp, end = 8.dp, bottom = 24.dp)
+    ) {
+
+
+        authorName?.also {
+            Text(color = Pink40, fontSize = 18.sp, fontWeight = FontWeight.Normal, text = it)
+        }
+        Spacer(modifier = Modifier.weight(1f))
+
+
+        sourceName?.also {
+            Text(color = Pink40, fontSize = 18.sp, fontWeight = FontWeight.Normal, text = it)
+        }
+
+    }
+
 }
