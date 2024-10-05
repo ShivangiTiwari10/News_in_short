@@ -20,5 +20,6 @@ object Versions {
     const val loggingInterceptor ="4.12.0"
     const val coroutines ="1.3.9'"
     const val splashScreen ="1.0.0"
+    const val coil ="2.7.0"
 
 }

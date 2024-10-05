@@ -85,6 +85,7 @@ dependencies {
     implementation(Dependencies.loggingInterceptor)
     implementation(Dependencies.coroutines)
     implementation(Dependencies.splashScreen)
+    implementation(Dependencies.coil)
 
 }
 kapt {
