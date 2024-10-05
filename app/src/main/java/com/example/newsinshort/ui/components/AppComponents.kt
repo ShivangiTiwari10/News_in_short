@@ -3,6 +3,7 @@ package com.example.newsinshort.ui.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -20,6 +21,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -70,8 +73,28 @@ fun NormalTextComponent(textValue: String) {
             .padding(8.dp)
             .wrapContentHeight(), text = textValue,
         style = TextStyle(
+            color = Purple40,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Normal,
+            fontFamily = FontFamily.Monospace
+        )
+    )
+}
+
+@Composable
+
+fun headingTextComponent(textValue: String) {
+
+    Text(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp)
+            .wrapContentHeight(), text = textValue,
+        style = TextStyle(
             color = Color.Black,
-            fontSize = 18.sp
+            fontSize = 24.sp,
+
+            fontWeight = FontWeight.Medium
         )
     )
 }
@@ -90,16 +113,25 @@ fun NewsRowComponent(page: Int, article: Article) {
         AsyncImage(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(240.dp),
+                .height(240.dp)
+                .padding(8.dp),
             model = article.urlToImage,
             contentDescription = "image",
-            contentScale = ContentScale.FillBounds,
+            contentScale = ContentScale.Fit,
             placeholder = painterResource(id = R.drawable.baseline_newspaper_24)
 
         )
+        Spacer(modifier = Modifier.size(20.dp))
+
+
+        headingTextComponent(textValue = article.title ?: "")
+        Spacer(modifier = Modifier.size(10.dp))
+
+        NormalTextComponent(textValue = article.description ?: "")
+
+        NormalTextComponent(textValue = article.content ?: "")
 
     }
-
 
 }
 
@@ -120,4 +152,3 @@ fun NewsRowComponentPrev() {
     )
     NewsRowComponent(0, article = article)
 }
-
