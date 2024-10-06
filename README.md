@@ -1,7 +1,9 @@
-## Basic News App
+# Basic News App
+
+## Overview
 ### This is basic news app that fatches the latest news from NewsApi
 
-## Tech Stack
+# Tech Stack
 
 ### Jetpack Compose for UI
 ### Dependency Injection with Dagger-HILT
@@ -12,5 +14,8 @@
 ### Coroutines & Flow
 ### Pager: To make swipeable screens 
 ### Custom Composable creation
+
+# Acknowledgement
+Followed Native Mobile Bits youtube video to create this
 
 
