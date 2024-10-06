@@ -123,7 +123,7 @@ fun NewsRowComponent(page: Int, article: Article) {
             model = article.urlToImage,
             contentDescription = "image",
             contentScale = ContentScale.Fit,
-            placeholder = painterResource(id = R.drawable.baseline_newspaper_24)
+            placeholder = painterResource(id = R.drawable.news)
 
         )
         Spacer(modifier = Modifier.size(20.dp))
